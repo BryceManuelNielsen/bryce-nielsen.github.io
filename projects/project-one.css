@@ -6,7 +6,7 @@
     background-position: center;
     color: white;
     padding: 40px 20px 80px;
-    text-align: center; 
+    text-align: center;
 }
 .project-meta { 
     display: flex; 
@@ -26,31 +26,29 @@
 /* --- Layout & Container --- */
 
 .content-wrapper {
-    margin: 20px 0; /* Reduced the top margin from 40px to 20px */
+    margin: 20px auto; /* Centering the container */
     display: grid;
-    grid-template-columns: 300px 1fr; 
-    gap: 0; 
+    /* First column fits the sidebar, second takes the rest */
+    grid-template-columns: 340px 1fr; 
+    gap: 40px; /* This creates the space between sidebar and text */
+    max-width: 1400px; /* Limits how far they spread on huge screens */
+    padding: 0 40px; 
     align-items: start;
-    max-width: 100%;
-    padding: 0; 
 }
 
 /* --- Sidebar Styling --- */
 
 .project-sidebar {
-    width: 340px; /* Fixed width to prevent clustering */
-    background: white;
-    padding: 20px;
-    border-radius: 15px; /* Restored all-around rounded corners */
-    border: 1px solid #e2e8f0;
     position: sticky;
-    top: 120px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    
-    /* The Magic Sauce: */
-    margin-left: 60px; /* This pushes it away from the screen edge */
+    top: 100px; 
+    z-index: 10;
+    align-self: start;
+    width: 340px;
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
 }
-
 .sidebar-block { 
     margin-bottom: 25px; 
 }
@@ -86,10 +84,11 @@
 /* --- Main Content Area --- */
 
 .project-main-content { 
-    max-width: 900px; /* Reduced from 1200px for better reading flow */
-    margin: auto; 
-    line-height: 1.7; /* Increased line height for breathing room */
-    color: #334155;   /* Softer black for long-form reading */
+    width: 100%; /* Take up the full 1fr column */
+    max-width: 850px; 
+    margin: 0; /* Let the grid gap handle the spacing */
+    line-height: 1.7;
+    color: #334155;
 }
 
 /* Add this to remove extra spacing from the first heading */
