@@ -6,14 +6,16 @@
     <title>Bryce Nielsen</title>
     
     <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav>
         <h1 class="basic_text">Bryce Nielsen</h1>
-        <ul class="nav-links">
+        <button class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="nav-list">
             <li><a href="#about">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -31,7 +33,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-flex-container">
             <div class="about-photo">
-                <img src="photos\headshot.png" alt="Bryce Nielsen Photo">
+                <img src="photos/headshot.png" alt="Bryce Nielsen Photo">
             </div>
             
             <div class="about-text">
@@ -44,9 +46,8 @@
     <section id="projects" class="container">
         <h2 class="section-title">Projects</h2>
         <div class="project-grid">
-            
             <div class="project-card">
-                <img src="photos\Chasis.png" alt="Software Project" class="project-img">
+                <img src="photos/Chasis.png" alt="Software Project" class="project-img">
                 <div class="project-content">
                     <span class="project-tag">Software / SolidWorks</span>
                     <h3>Autonomous Mechatronic Scavenger Robot</h3>
@@ -98,6 +99,21 @@
             <a href="mailto:bryce.nielsen@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
-    
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Closes the menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
