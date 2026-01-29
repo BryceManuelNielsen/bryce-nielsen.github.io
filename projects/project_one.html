@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Detail | Bryce Nielsen</title>
-    <link rel="stylesheet" href="../style.css">    
-    <link rel="stylesheet" href="project-one.css">    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="project-one.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <nav>
@@ -18,7 +20,7 @@
             </button>
             <ul class="nav-links" id="nav-list">
                 <li><a href="../index.html#projects">Back to Projects</a></li>
-                <li><a href="../index.html#contact" >Hire Me</a></li>
+                <li><a href="../index.html#contact">Hire Me</a></li>
             </ul>
         </div>
     </nav>
@@ -26,12 +28,13 @@
     <header class="project-header">
         <div>
             <h1>Autonomous Mechatronic Scavenger Robot</h1>
-            <p class="subtitle">Designed and Constructed an autonomous system capable of navigating a 25x25 area to locate, collect, and sort valuable objects based on color within a 120-second time limit.</p>
+            <p class="subtitle">Designed and Constructed an autonomous system capable of navigating a 25x25 area to
+                locate, collect, and sort valuable objects based on color within a 120-second time limit.</p>
         </div>
     </header>
 
     <main class="content-wrapper">
-        
+
         <aside class="project-sidebar">
             <div class="sidebar-block">
                 <h4>Role</h4>
@@ -44,7 +47,8 @@
             <div class="sidebar-block">
                 <h4>Tools Used</h4>
                 <div class="tool-tags">
-                    <span>C++</span><span>Git</span><span>Microcontrollers</span><span>Soldering</span><span>Circuit Design</span><span>SolidWorks</span>
+                    <span>C++</span><span>Git</span><span>Microcontrollers</span><span>Soldering</span><span>Circuit
+                        Design</span><span>SolidWorks</span>
                 </div>
             </div>
             <div class="sidebar-block">
@@ -58,54 +62,140 @@
 
             <section class="text-block">
                 <h2>Project Overview</h2>
-                <p>The Autonomous Scavenger Robot was designed to address the risks associated with human-operated retrieval in hazardous or inaccessible environments, such as deep-sea or Martian terrain. The core objective was to develop a mechatronic system capable of navigating a 25x25 meter area to locate, collect, and sort valuable objects based on color within a strict 120-second time limit.</p>
-                <p>The project required a multidisciplinary approach, integrating mechanical design, electronic control, and autonomous software algorithms.</p>
-                
+                <p>The Autonomous Scavenger Robot was designed to address the risks associated with human-operated
+                    retrieval in hazardous or inaccessible environments, such as deep-sea or Martian terrain. The core
+                    objective was to develop a mechatronic system capable of navigating a 25x25 meter area to locate,
+                    collect, and sort valuable objects based on color within a strict 120-second time limit.</p>
+                <p>The project required a multidisciplinary approach, integrating mechanical design, electronic control,
+                    and autonomous software algorithms.</p>
+
                 <h3>Constraints & Requirements</h3>
                 <ul>
-                    <li><strong>Autonomy:</strong> The robot had to operate entirely independently using an ESP32 microcontroller, relying solely on internal programming and sensors without external guides or human intervention.</li>
-                    <li><strong>Compact & Lightweight:</strong> To maximize speed and efficiency, the design target was a weight under 1kg and dimensions small enough to fit in a standard MSE locker without disassembly.</li>
-                    <li><strong>Budget:</strong> A strict $50 budget for additional components necessitated highly efficient resource utilization.</li>
+                    <li><strong>Autonomy:</strong> The robot had to operate entirely independently using an ESP32
+                        microcontroller, relying solely on internal programming and sensors without external guides or
+                        human intervention.</li>
+                    <li><strong>Compact & Lightweight:</strong> To maximize speed and efficiency, the design target was
+                        a weight under 1kg and dimensions small enough to fit in a standard MSE locker without
+                        disassembly.</li>
+                    <li><strong>Budget:</strong> A strict $50 budget for additional components necessitated highly
+                        efficient resource utilization.</li>
                 </ul>
 
                 <h3>Technical Specifications</h3>
                 <ul>
                     <li><strong>Microcontroller:</strong> ESP32-based MSEduino board.</li>
-                    <li><strong>Locomotion:</strong> Two-wheel drive (2WD) with a rear metal roller ball for enhanced maneuverability.</li>
-                    <li><strong>Sensors:</strong> Ultrasonic sensors for distance and collision avoidance, a TCS34725 color sensor for object identification, and an IR receiver for home base navigation.</li>
+                    <li><strong>Locomotion:</strong> Two-wheel drive (2WD) with a rear metal roller ball for enhanced
+                        maneuverability.</li>
+                    <li><strong>Sensors:</strong> Ultrasonic sensors for distance and collision avoidance, a TCS34725
+                        color sensor for object identification, and an IR receiver for home base navigation.</li>
                     <li><strong>Weight:</strong> Approximately 500 grams (50% of the maximum allowable weight).</li>
-            </section>
-            
-            <section>
-                <h2> Mechanical Design & build</h2>
-                <p> The robot's chassis was designed to house multiple subsystems within a compact frame that could fit into an MSE locker without disassembly. The build focused on a 2-wheel drive (2WD) system for efficiency and weight distribution.</p>
-                <h3> Key Mechanical Components</h3>
-                <ul>
-                    <li><strong>Chasis & Frame:</strong> A 3D-printed structure (PLA) that provided the mounting points for all motors, sensors, and the MSEduino board.</li>
-                    <li><strong>Collection Subsystem:</strong> Utilized a "Large Funnel Plate" and a "Small Funnel Plate" to guide objects toward the sensor. A ramp extension was added to ensure gems could be collected from the floor effectively after wheel height adjustments.</li>
-                    <li><strong>Color Detection Array:</strong> An array of photoresistors was positioned above the collection area to detect the color of incoming objects, enabling real-time sorting.</li>
-                    <li><strong>Sorting & Transportation:</strong> High-torque DC motors powered the rear wheels, while swivel ball furniture movers were integrated at the front to enhance stability and reduce drag on uneven terrain.</li>
-                </ul>
-                
             </section>
 
             <section class="text-block">
                 <h2>The Solution</h2>
-                <p>The final design utilized a <strong>two-wheel rear-drive configuration</strong> powered by high-torque DC motors, selected for its agility, simplicity, and ease of control. To solve the issue of friction on uneven terrains encountered during early testing, swivel ball furniture movers were integrated at the front end to improve stability and reduce drag.</p>
+                <p>The final design utilized a <strong>two-wheel rear-drive configuration</strong> powered by
+                    high-torque DC motors, selected for its agility, simplicity, and ease of control. To solve the issue
+                    of friction on uneven terrains encountered during early testing, swivel ball furniture movers were
+                    integrated at the front end to improve stability and reduce drag.</p>
                 <ol>
                     <li>
                         <strong>Object Collection & Transportation:</strong>
-                        <p>To overcome gravity and lift gems off the ground, a rotating "windmill" sweeper arm was engineered. This arm worked in conjunction with a built-in ramp to scoop gems effectively into internal storage. A barrier wall was added next to the bucket to prevent gems from being flung at an angle and missing the containment area.</p>
+                        <p>To overcome gravity and lift gems off the ground, a rotating "windmill" sweeper arm was
+                            engineered. This arm worked in conjunction with a built-in ramp to scoop gems effectively
+                            into internal storage. A barrier wall was added next to the bucket to prevent gems from
+                            being flung at an angle and missing the containment area.</p>
                     </li>
                     <li>
                         <strong>Color Detection:</strong>
-                        <p>The robot employed an array of photoresistors positioned above the collection area to detect the color of incoming gems. By calibrating the sensors to recognize specific light intensity thresholds corresponding to red, green, and blue gems, the system could make real-time sorting decisions.</p>
+                        <p>The robot employed an array of photoresistors positioned above the collection area to detect
+                            the color of incoming gems. By calibrating the sensors to recognize specific light intensity
+                            thresholds corresponding to red, green, and blue gems, the system could make real-time
+                            sorting decisions.</p>
                     </li>
                     <li>
                         <strong>Mechanical Reliability:</strong>
-                        <p>Using SolidWorks, the chassis was meticulously designed to optimize weight distribution and structural integrity. Prototyping and iterative testing led to refinements that enhanced durability without compromising speed.</p>
+                        <p>Using SolidWorks, the chassis was meticulously designed to optimize weight distribution and
+                            structural integrity. Prototyping and iterative testing led to refinements that enhanced
+                            durability without compromising speed.</p>
                     </li>
                 </ol>
+            </section>
+
+            <section>
+                <h2> Mechanical Design & build</h2>
+                <p> The robot's chassis was designed to house multiple subsystems within a compact frame that could fit
+                    into an MSE locker without disassembly. The build focused on a 2-wheel drive (2WD) system for
+                    efficiency and weight distribution.</p>
+                <h3> Key Mechanical Components</h3>
+                <ul>
+                    <li><strong>Chasis & Frame:</strong> A 3D-printed structure (PLA) that provided the mounting points
+                        for all motors, sensors, and the MSEduino board.</li>
+                    <li><strong>Collection Subsystem:</strong> Utilized a "Large Funnel Plate" and a "Small Funnel
+                        Plate" to guide objects toward the sensor. A ramp extension was added to ensure gems could be
+                        collected from the floor effectively after wheel height adjustments.</li>
+                    <li><strong>Color Detection Array:</strong> An array of photoresistors was positioned above the
+                        collection area to detect the color of incoming objects, enabling real-time sorting.</li>
+                    <li><strong>Sorting & Transportation:</strong> High-torque DC motors powered the rear wheels, while
+                        swivel ball furniture movers were integrated at the front to enhance stability and reduce drag
+                        on uneven terrain.</li>
+                    <ul>
+                        <li><strong>Sorter Arm:</strong> A mechanical gate that activated when the color sensor
+                            identified a green gem.</li>
+                        <li><strong>Sweeper/Windmill Arm:</strong> A rotating arm that moved the sorted gems into the
+                            dump bucket.</li>
+                    </ul>
+                    <li><strong>Dump Bucket:</strong> A storage area mounted on a servo motor that flipped to deposit
+                        gems once the robot reached the home base.</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h2>Electrical & Software Architecture</h2>
+                <p> The system's "brain" was an ESP32-based microcontroller (MSEduino) programmed to handle real-time
+                    data processing without delay functions to ensure immediate reactions to obstacles.</p>
+
+                <h3>Sensory & Power Schematic</h3>
+                <ul>
+                    <li>
+                        <p><strong>TCS34725 Color Sensor:</strong> Calibrated using normalized wavelength values to
+                            identify green gems while ignoring the floor color.</p>
+                    </li>
+                    <li>
+                        <strong>HC-SR04 Ultrasonic Sensor:</strong>
+                        Positioned to detect the home base bin at a threshold of 2cm to trigger the deposit mechanism.
+                    </li>
+                    <li>
+                        <p><strong>IR Receiver (TSOP32238):</strong> Used to detect the IR beacon signal from the home
+                            base, allowing the robot to "lock on" and drive toward the deposit area.</p>
+                    </li>
+                    <li>
+                        <p><strong>Motors:</strong> Two DC motors with encoders for precision driving and three servo
+                            motors for the bucket and sorting arms.</p>
+                    </li>
+                </ul>
+                
+                <div class="image-gallery">
+                    <div>
+                        <img src="C:\Users\bryce\bryce-nielsen.github.io\photos\Electrical_Schematic.png" style="width: 800px; height: auto;" alt="Circuit Diagram">
+                        <p class="caption">Fig 1: Electrical Schematic Diagram</p>
+                    </div>
+                </div>
+                <h3>Software Logic Stages</h3>
+                <ul>
+                    <li>
+                        <p><strong>Navigation Stage:</strong> The robot executes a hardcoded or grid-based path while monitoring for obstacles.</p>
+                    </li>
+                    <li>
+                        <p><strong>Detection & Sort Stage:</strong> If the color sensor reads a "Green" value, the sorter arm opens; otherwise, it remains closed to discard the item.</p>
+                    </li>
+                    <li>
+                        <p><strong>Homing Stage:</strong> After 90 cm or a set distance, the robot spins until the IR detector finds the home base signal and initiates a return drive.</p>
+                    </li>
+                    <li>
+                        <p><strong>Deposit Stage:</strong> Once the ultrasonic sensor detects a proximity of 2cm to the home bucket, the motors stop and the dump bucket servo rotates 180 degrees.</p>
+                    </li>
+                </ul>                
             </section>
 
             <section class="image-gallery">
@@ -121,10 +211,12 @@
 
             <section class="text-block">
                 <h2>Architecture & Decision Making</h2>
-                <p>Discuss your architecture, the algorithms you chose, and why you chose them. Demonstrate your engineering decision-making process.</p>
-                
+                <p>Discuss your architecture, the algorithms you chose, and why you chose them. Demonstrate your
+                    engineering decision-making process.</p>
+
                 <div class="highlight-box">
-                    <strong>Key Innovation:</strong> Used a custom Transformer-based model to reduce inference time by 40% compared to standard RNNs.
+                    <strong>Key Innovation:</strong> Used a custom Transformer-based model to reduce inference time by
+                    40% compared to standard RNNs.
                 </div>
             </section>
 
@@ -140,7 +232,8 @@
                         <span class="stat-label">Latency Reduction</span>
                     </div>
                 </div>
-                <p>Summarize the final outcome and what you learned from this project. Quantifiable results are always better than generic descriptions.</p>
+                <p>Summarize the final outcome and what you learned from this project. Quantifiable results are always
+                    better than generic descriptions.</p>
             </section>
         </article>
     </main>
@@ -148,7 +241,7 @@
     <footer>
         <p>&copy; 2026 Bryce Nielsen. Engineering Portfolio Template.</p>
     </footer>
-    
+
     <script>
         const menuToggle = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-list');
