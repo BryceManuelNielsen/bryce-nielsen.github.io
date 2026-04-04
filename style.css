@@ -35,7 +35,12 @@ body {
 }
 
 /* Typography Details */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -67,7 +72,8 @@ nav {
     align-items: center;
 }
 
-.logo-text, .basic_text {
+.logo-text,
+.basic_text {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-main);
@@ -135,7 +141,11 @@ nav {
     border-radius: 50px;
     font-weight: 600 !important;
 }
-.nav-cta::after { display: none !important; }
+
+.nav-cta::after {
+    display: none !important;
+}
+
 .nav-cta:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
@@ -165,7 +175,7 @@ nav {
     left: -20%;
     width: 80vw;
     height: 80vw;
-    background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
     z-index: 1;
 }
 
@@ -198,7 +208,7 @@ nav {
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 1.5rem;
     animation: bounce 2s infinite;
     z-index: 2;
@@ -253,12 +263,6 @@ nav {
     border: 2px solid var(--primary);
     border-radius: var(--radius-lg);
     z-index: -1;
-    transform: translate(10px, 10px);
-    transition: var(--transition);
-}
-
-.about-photo:hover::before {
-    transform: translate(0, 0);
 }
 
 .about-photo img {
@@ -438,13 +442,13 @@ footer p {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     color: white;
     font-size: 1.3rem;
     text-decoration: none;
     transition: var(--transition);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-links a:hover {
@@ -461,14 +465,34 @@ footer p {
 
 /* Animations */
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-15px) translateX(-50%); }
-    60% { transform: translateY(-7px) translateX(-50%); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-7px) translateX(-50%);
+    }
 }
 
 /* Responsive Overrides */
@@ -477,7 +501,7 @@ footer p {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .about-photo {
         max-width: 400px;
         margin: 0 auto;
