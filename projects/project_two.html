@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Predictive Dashboard | Bryce Nielsen</title>
+    <title>Electricity Load & Renewable Forecasting | Bryce Nielsen</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,9 +32,9 @@
     </nav>
 
     <header class="project-header">
-        <h1>AI Predictive Dashboard</h1>
-        <p class="subtitle">Currently in development: A predictive analytics dashboard integrating modern web
-            technologies with machine learning to forecast trends.</p>
+        <h1>Electricity Load & Renewable Forecasting</h1>
+        <p class="subtitle">A comparative analysis of LSTM, GRU, and TCN Models for short-term load forecasting in
+            renewable-rich German power grids.</p>
     </header>
 
     <main class="content-wrapper">
@@ -42,21 +42,23 @@
         <aside class="project-sidebar">
             <div class="sidebar-block">
                 <h4>Role</h4>
-                <p>Full Stack / ML Engineer</p>
+                <p>Machine Learning Engineer</p>
             </div>
             <div class="sidebar-block">
-                <h4>Timeline</h4>
-                <p>Ongoing (Winter 2026)</p>
+                <h4>Topic</h4>
+                <p>Deep Learning for Time Series Data</p>
             </div>
             <div class="sidebar-block">
                 <h4>Tools Used</h4>
                 <div class="tool-tags">
-                    <span>Python</span><span>React</span><span>TensorFlow</span><span>PostgreSQL</span>
+                    <span>Python</span><span>Keras</span><span>TensorFlow</span><span>Pandas</span><span>Scikit-Learn</span>
                 </div>
             </div>
             <div class="sidebar-block">
-                <a href="#" class="btn primary full-width"><i class="fas fa-clock"></i> Coming Soon</a>
-                <a href="#" class="btn secondary full-width"><i class="fab fa-github"></i> Source Code</a>
+                <a href="https://github.com/coleb9/Time-Series-Project/blob/main/Group_11_Time_Series_Project_Final.ipynb"
+                    target="_blank" class="btn secondary full-width"><i class="fab fa-github"></i> Jupyter Notebook</a>
+                <a href="../files/4010 Group 11 Project Report.pdf" target="_blank" class="btn secondary full-width"><i
+                        class="fas fa-file-pdf"></i> Read Report</a>
             </div>
         </aside>
 
@@ -64,43 +66,74 @@
             <a href="../index.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Home</a>
 
             <section class="text-block">
-                <h2>The Objective</h2>
-                <p>This project aims to build a scalable predictive interface seamlessly connecting intensive backend
-                    machine learning models with a responsive, intuitive frontend. As businesses continue to generate
-                    massive datasets, making sense of this data through predictive trends is essential to maintaining an
-                    analytical edge.</p>
+                <h2>Project Overview</h2>
+                <p>As power systems integrate increasing amounts of wind and solar generation, short-term load
+                    forecasting is critical for maintaining grid stability and minimizing balancing costs. This project
+                    forecasts hourly electricity load in Germany utilizing modern Deep Learning architectures.</p>
+                <p>By building a multivariate time series that combined historical load with onshore wind, solar
+                    generation, and calendar features, we structured a pipeline to evaluate the most resource-efficient
+                    layout between Long Short-Term Memory (LSTM), Gated Recurrent Units (GRU), and Temporal
+                    Convolutional Networks (TCN).</p>
+            </section>
+
+            <section class="text-block">
+                <h2>Methodology & Data Processing</h2>
+                <p>The system was trained off of Open Power System Data (OPSD). Operational data inherently contains
+                    noise and gaps, requiring rigorous preparation pipelines:</p>
+                <ul>
+                    <li><strong>Time-Based Interpolation:</strong> Missing values were handled via continuous time-based
+                        forward and backward filling to retain temporal validity.</li>
+                    <li><strong>Standardization:</strong> Scaling features to stabilize model optimization and avoid
+                        neural bias toward large values without causing cross-set data leakage.</li>
+                    <li><strong>Sliding-Window Sequences:</strong> Structured to capture the previous 24 hours of system
+                        conditions (load, solar, wind, & calendar features) to predict the next 24 hours chronologically
+                        using Keras input shapes.</li>
+                </ul>
             </section>
 
             <section class="image-gallery">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=60"
-                        alt="Dashboard Chart Mockup">
-                    <p class="caption">Fig 1: Initial Dashboard Layout Mockup</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60"
-                        alt="Data Flow">
-                    <p class="caption">Fig 2: Data Aggregation View</p>
+                    <img src="../photos/deep_learning_network.png" alt="Deep Learning Architecture Visualization">
+                    <p class="caption">TCN and GRU Neural Network Flow Representation</p>
                 </div>
             </section>
 
             <section class="text-block">
-                <h2>Proposed Architecture</h2>
-                <p>By leveraging React on the frontend and Python (FastAPI + TensorFlow) on the backend, this project
-                    will execute complex data processing efficiently while immediately serving insights via WebSocket or
-                    REST architecture.</p>
+                <h2>Architectural Evaluation</h2>
+                <p>Three models were benchmarked to identify optimal operational deployments:</p>
+                <ul>
+                    <li><strong>LSTM Baseline:</strong> Yielded the lowest configuration stability and underestimated
+                        peak loads, serving generally as an architecture foundation.</li>
+                    <li><strong>Temporal Convolutional Networks (TCN):</strong> Replaced recurrence with stacks of 1D
+                        causal dilated convolutions. Exploiting Bayesian Optimization, the TCN delivered strong
+                        competitive accuracy and executed up to 3.5× faster.</li>
+                    <li><strong>Multivariate GRU (Winner):</strong> The 64-unit stacked GRU model seamlessly handled
+                        massive predictive deviations and accurately tracked fluctuating drops and ramps over test data.
+                    </li>
+                </ul>
 
                 <div class="highlight-box">
-                    <strong>Tech Stack Innovation:</strong> Implementing asynchronous pipelines to process inference
-                    requests in the background, updating the dashboard in real-time without locking the UI.
+                    <strong>Key Architectural Finding:</strong> Including wind and solar variations produced an
+                    improvement of over 16.5% relative to estimating standard load histories, proving standard
+                    univariate predictions in modern grids are inadequate.
                 </div>
             </section>
 
             <section class="text-block">
-                <h2>Expected Impact</h2>
-                <p>Once completed, this will serve as a foundational template that can be expanded to different data
-                    realms (finance, supply chain, environmental analytics), displaying an ability to handle end-to-end
-                    web deployment alongside Data Science methodologies.</p>
+                <h2>Results & Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">463</span>
+                        <span class="stat-label">MW (Mean Absolute Error)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">601</span>
+                        <span class="stat-label">MW (Root Mean Squared Error)</span>
+                    </div>
+                </div>
+                <p>The multivariate GRU emerged as the most resilient model overall, whereas the TCN offered a powerful
+                    accuracy-efficiency trade-off for time-critical deployments. Such frameworks supply crucial unit
+                    commitments for regional grids integrating renewable resources at exponential scales.</p>
             </section>
         </article>
     </main>
