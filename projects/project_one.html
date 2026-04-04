@@ -131,6 +131,32 @@
                     into an MSE locker without disassembly. The build focused on a 2-wheel drive (2WD) system for
                     efficiency and weight distribution.</p>
 
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="../photos/mechanical_photos/Frame_design.png"
+                                alt="Frame Design"></div>
+                        <div class="carousel-slide"><img src="../photos/mechanical_photos/Sweeper_design.png"
+                                alt="Sweeper Design"></div>
+                        <div class="carousel-slide"><img src="../photos/mechanical_photos/dumpbucket_design.png"
+                                alt="Dumpbucket Design"></div>
+                        <div class="carousel-slide"><img src="../photos/mechanical_photos/sortingarm_design.png"
+                                alt="Sorting Arm Design"></div>
+                        <div class="carousel-slide"><img src="../photos/mechanical_photos/Final_Assembly.png"
+                                alt="Final Assembly"></div>
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous image"><i
+                            class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" aria-label="Next image"><i
+                            class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-nav">
+                        <span class="carousel-dot active"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                        <span class="carousel-dot"></span>
+                    </div>
+                </div>
+
                 <h3>Key Mechanical Components</h3>
                 <ul>
                     <li><strong>Chassis & Frame:</strong> A 3D-printed structure (PLA) that provided the mounting points
@@ -247,6 +273,40 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // Carousel Logic
+        const track = document.querySelector('.carousel-track');
+        if (track) {
+            const slides = Array.from(track.children);
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+
+            let currentIndex = 0;
+
+            const updateCarousel = (index) => {
+                track.style.transform = 'translateX(-' + index * 100 + '%)';
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[index].classList.add('active');
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+                updateCarousel(currentIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+                updateCarousel(currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel(currentIndex);
+                });
+            });
+        }
     </script>
 </body>
 
