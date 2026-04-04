@@ -1,252 +1,333 @@
-/* --- Global Detail Page Styles --- */
+/* --- Premium Project Detail Styles --- */
 
-.project-header { 
-    background-color: #0f172a;
-    background-size: cover;
-    background-position: center;
+.project-header {
+    background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
     color: white;
-    padding: 40px 20px 80px;
+    padding: 100px 20px 120px;
     text-align: center;
-}
-.project-meta { 
-    display: flex; 
-    justify-content: center; 
-    gap: 30px; 
-    margin-top: 20px; 
-    color: #94a3b8;
-    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.subtitle { 
-    color: #94a3b8; 
-    font-size: 1.1rem; 
-    margin-top: 10px; 
+.project-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--bg-color), transparent);
+}
+
+.project-header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    max-width: 900px;
+    margin: 0 auto;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Layout & Container --- */
 
 .content-wrapper {
-    margin: 20px auto; /* Centering the container */
     display: grid;
-    /* First column fits the sidebar, second takes the rest */
-    grid-template-columns: 340px 1fr; 
-    gap: 40px; /* This creates the space between sidebar and text */
-    max-width: 1400px; /* Limits how far they spread on huge screens */
-    padding: 0 40px; 
+    grid-template-columns: 340px 1fr;
+    gap: 40px;
     align-items: start;
+    max-width: 1250px;
+    margin: -80px auto 60px;
+    /* Pulls content over the header */
+    padding: 0 5%;
+    position: relative;
+    z-index: 10;
 }
 
 /* --- Sidebar Styling --- */
 
 .project-sidebar {
+    background: var(--surface);
+    padding: 35px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
     position: sticky;
-    top: 100px; 
-    z-index: 10;
-    align-self: start;
-    width: 340px;
-    background: white;
-    padding: 24px;
-    border-radius: 15px;
-    border: 1px solid #e2e8f0;
-}
-.sidebar-block { 
-    margin-bottom: 25px; 
+    top: 120px;
+    box-shadow: var(--shadow-xl);
 }
 
-.sidebar-block h4 { 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    color: var(--text-muted); 
-    margin-bottom: 8px;
-    letter-spacing: 1px;
+.sidebar-block {
+    margin-bottom: 25px;
 }
 
-.tool-tags { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 8px; 
+.sidebar-block h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.sidebar-block p {
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .tool-tags span {
-    background: #f1f5f9;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 600;
+    border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-.full-width { 
-    width: 100%; 
-    text-align: center; 
-    margin: 5px 0; 
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn.primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn.primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.25);
+}
+
+.btn.secondary {
+    background: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn.secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
 }
 
 /* --- Main Content Area --- */
 
-.project-main-content { 
-    width: 100%; /* Take up the full 1fr column */
-    max-width: 850px; 
-    margin: 0; /* Let the grid gap handle the spacing */
-    line-height: 1.7;
-    color: #334155;
+.project-main-content {
+    background: var(--surface);
+    padding: 50px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
 }
 
-/* Add this to remove extra spacing from the first heading */
-.project-main-content .text-block:first-of-type h2 {
-    margin-top: 0; 
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    padding: 8px 16px;
+    background: var(--bg-color);
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
 }
 
-.back-link { 
-    display: inline-block; 
-    margin-bottom: 10px; /* Reduced from 25px */
-    color: var(--primary); 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 1.2rem;
-    transition: transform 0.2s;
+.back-link:hover {
+    color: var(--primary);
+    border-color: var(--primary-light);
+    transform: translateX(-4px);
 }
 
-.back-link:hover { transform: translateX(-5px); }
-
-.project-large-img { 
-    width: 100%; 
+.project-large-img {
+    width: 100%;
     height: auto;
-    max-height: 500px; /* Prevents vertical images from stretching too far */
-    border-radius: 16px; 
-    margin-bottom: 40px; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+    max-height: 500px;
+    border-radius: var(--radius-md);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-md);
     object-fit: cover;
 }
 
-.text-block { 
-    margin-bottom: 40px; 
+.text-block {
+    margin-bottom: 50px;
 }
 
-.text-block h2 { 
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    font-size: 1.85rem;
-    border-bottom: 2px solid #f1f5f9; /* Subtle separator */
-    padding-bottom: 10px;
+.text-block h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.text-block h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
 }
 
 .text-block h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    color: #1e293b;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--text-main);
 }
 
 .text-block p {
-    margin-bottom: 1.5rem; /* Consistent spacing between paragraphs */
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
 }
 
-/* --- List & Solution Styling --- */
-
-.text-block ul, 
+/* Lists */
+.text-block ul,
 .text-block ol {
-    margin-bottom: 2rem;
-    padding-left: 1.5rem;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
 .text-block li {
-    margin-bottom: 1rem; /* Spacing between list items */
+    margin-bottom: 12px;
 }
 
 .text-block li strong {
-    color: #0f172a;
-    display: block; /* Moves the bold header to its own line */
-    margin-bottom: 0.25rem;
+    color: var(--text-main);
 }
 
-/* Specific fix for your "Solution" steps */
-.text-block ol > li {
-    padding-left: 0.5rem;
-}
-
-.text-block ol p {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    color: #475569;
-}
-
-/* --- Highlight Box & Stats --- */
+/* Highlight Box */
 .highlight-box {
-    background: #f8fafc;
-    border-left: 4px solid #3b82f6;
-    padding: 24px;
-    border-radius: 4px;
-    margin: 3rem 0;
-    font-style: italic;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    background: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    padding: 25px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 40px 0;
 }
 
+.highlight-box strong {
+    color: var(--primary-hover);
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Stats */
 .impact-stats {
     display: flex;
-    gap: 40px;
-    margin: 30px 0;
+    gap: 50px;
+    margin: 40px 0;
+    padding: 30px;
+    background: var(--bg-color);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
 }
 
-.stat-item { text-align: left; }
-
-.stat-num { 
-    display: block; 
-    font-size: 2.2rem; 
-    font-weight: 800; 
-    color: var(--primary); 
+.stat-num {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 5px;
 }
 
-.stat-label { 
-    font-size: 0.85rem; 
-    color: var(--text-muted); 
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
-/* --- Gallery Section --- */
-
+/* Gallery */
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin: 40px 0;
+    gap: 30px;
+    margin: 50px 0;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
 }
 
 .caption {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-/* --- Responsive Fixes --- */
-
+/* Responsive */
 @media (max-width: 1000px) {
-    .content-wrapper { 
-        grid-template-columns: 1fr; 
-        margin-top: 20px; 
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        margin-top: -40px;
         padding: 0 20px;
     }
-    
-    .project-sidebar { 
-        position: relative; 
-        top: 0; 
-        border-radius: 15px; /* Restore all rounded corners on mobile */
-        border-left: 1px solid #e2e8f0;
-        margin: 0 0 40px 0;
+
+    .project-sidebar {
+        position: relative;
+        top: 0;
         order: 2;
+        margin-top: 20px;
     }
-    
-    .project-main-content { 
-        order: 1; 
+
+    .project-main-content {
+        order: 1;
+        padding: 30px 20px;
     }
-    
-    .image-gallery { 
-        grid-template-columns: 1fr; 
+
+    .impact-stats {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
     }
 }

@@ -1,103 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Detail | Bryce Nielsen</title>
-    <link rel="stylesheet" href="../style.css">    
+    <title>IoT Smart Controller | Bryce Nielsen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="project-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
     <nav>
         <div class="nav-container">
-            <h2 class="logo"><a href="../index.html" style="color:inherit; text-decoration:none;">BN<span>.</span></a></h2>
-            <ul class="nav-links">
+            <a href="../index.html" class="logo-text">Bryce Nielsen</a>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-list">
                 <li><a href="../index.html#projects">Back to Projects</a></li>
-                <li><a href="../index.html#contact" class="nav-cta">Hire Me</a></li>
+                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="project-header">
-        <div class="header-content">
-            <h1>Project Title Three</h1>
-            <p class="subtitle">A brief one-sentence hook about the project's main achievement.</p>
-        </div>
+        <h1>IoT Smart Controller</h1>
+        <p class="subtitle">Upcoming project utilizing ESP32 microcontrollers to interface with various environmental
+            sensors for real-time monitoring and alert dispatching.</p>
     </header>
 
     <main class="content-wrapper">
-        
+
         <aside class="project-sidebar">
             <div class="sidebar-block">
                 <h4>Role</h4>
-                <p>Lead Developer / Designer</p>
+                <p>Hardware / Firmware Engineer</p>
             </div>
             <div class="sidebar-block">
                 <h4>Timeline</h4>
-                <p>Fall 2025 (3 Months)</p>
+                <p>Design Phase</p>
             </div>
             <div class="sidebar-block">
                 <h4>Tools Used</h4>
                 <div class="tool-tags">
-                    <span>Python</span><span>PyTorch</span><span>React</span><span>AWS</span>
+                    <span>ESP32</span><span>C++</span><span>MQTT</span><span>KiCad</span><span>Altium</span>
                 </div>
             </div>
             <div class="sidebar-block">
-                <a href="#" class="btn primary full-width">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                <a href="#" class="btn secondary full-width"><i class="fab fa-github"></i> Source Code</a>
+                <a href="#" class="btn primary full-width"><i class="fas fa-hammer"></i> In Progress</a>
             </div>
         </aside>
 
         <article class="project-main-content">
-            <a href="../bryce-nielsen.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Home</a>
+            <a href="../index.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Home</a>
 
             <section class="text-block">
-                <h2>The Challenge</h2>
-                <p>Describe the specific problem you were trying to solve. Mention limitations of existing solutions or specific constraints of the project. This helps recruiters understand your "Why."</p>
+                <h2>The Concept</h2>
+                <p>Connecting the physical world to robust cloud applications requires precise firmware and reliable
+                    hardware. This project focuses on building a centralized smart controller capable of aggregating
+                    signals from diverse sensor types—temperature, humidity, motion, and light—and transmitting them
+                    efficiently via MQTT protocols.</p>
             </section>
 
             <section class="image-gallery">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500" alt="Logic Diagram">
-                    <p class="caption">Fig 1: System Architecture Diagram</p>
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=60"
+                        alt="Hardware Circuit Base">
+                    <p class="caption">Fig 1: Base Component Research</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500" alt="Interface">
-                    <p class="caption">Fig 2: User Interface Prototype</p>
+                    <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=600&auto=format&fit=crop&q=60"
+                        alt="Networking">
+                    <p class="caption">Fig 2: Network Topology Design</p>
                 </div>
             </section>
 
             <section class="text-block">
-                <h2>The Solution</h2>
-                <p>Discuss your architecture, the algorithms you chose, and why you chose them. Demonstrate your engineering decision-making process.</p>
-                
-                <div class="highlight-box">
-                    <strong>Key Innovation:</strong> Used a custom Transformer-based model to reduce inference time by 40% compared to standard RNNs.
-                </div>
+                <h2>Future Milestones</h2>
+                <ul>
+                    <li><strong>Hardware Design:</strong> Designing a custom PCB integrating the ESP32 module with
+                        cleanly routed traces for auxiliary sensor connections.</li>
+                    <li><strong>Firmware Development:</strong> Writing C++ utilizing FreeRTOS concepts for
+                        multi-threading to ensure sensor reads don't block the network transmission loops.</li>
+                    <li><strong>Cloud Platform Setup:</strong> Connecting to an AWS IoT Core or local Mosquitto broker
+                        to store and dispatch actionable alerts.</li>
+                </ul>
             </section>
 
-            <section class="text-block">
-                <h2>Results & Impact</h2>
-                <div class="impact-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">98%</span>
-                        <span class="stat-label">Accuracy Achieved</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">-15%</span>
-                        <span class="stat-label">Latency Reduction</span>
-                    </div>
-                </div>
-                <p>Summarize the final outcome and what you learned from this project. Quantifiable results are always better than generic descriptions.</p>
-            </section>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2026 Bryce Nielsen. Engineering Portfolio Template.</p>
+        <p>&copy; 2026 Bryce Nielsen. All rights reserved.</p>
     </footer>
 
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-list');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
+
 </html>

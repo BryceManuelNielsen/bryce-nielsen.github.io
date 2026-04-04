@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Detail | Bryce Nielsen</title>
+    <title>Autonomous Scavenger Robot | Bryce Nielsen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="project-one.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,23 +20,21 @@
 
     <nav>
         <div class="nav-container">
-            <h1><a href="../index.html" style="color:inherit; text-decoration:none;">Bryce Nielsen</a></h1>
+            <a href="../index.html" class="logo-text">Bryce Nielsen</a>
             <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="nav-list">
                 <li><a href="../index.html#projects">Back to Projects</a></li>
-                <li><a href="../index.html#contact">Hire Me</a></li>
+                <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="project-header">
-        <div>
-            <h1>Autonomous Mechatronic Scavenger Robot</h1>
-            <p class="subtitle">Designed and Constructed an autonomous system capable of navigating a 25x25 area to
-                locate, collect, and sort valuable objects based on color within a 120-second time limit.</p>
-        </div>
+        <h1>Autonomous Mechatronic Scavenger Robot</h1>
+        <p class="subtitle">Designed and Constructed an autonomous system capable of navigating a 25x25 area to
+            locate, collect, and sort valuable objects based on color within a 120-second time limit.</p>
     </header>
 
     <main class="content-wrapper">
@@ -174,28 +178,33 @@
                             motors for the bucket and sorting arms.</p>
                     </li>
                 </ul>
-                
+
                 <div class="image-gallery">
                     <div>
-                        <img src="C:\Users\bryce\bryce-nielsen.github.io\photos\Electrical_Schematic.png" style="width: 800px; height: auto;" alt="Circuit Diagram">
+                        <img src="C:\Users\bryce\bryce-nielsen.github.io\photos\Electrical_Schematic.png"
+                            style="width: 800px; height: auto;" alt="Circuit Diagram">
                         <p class="caption">Fig 1: Electrical Schematic Diagram</p>
                     </div>
                 </div>
                 <h3>Software Logic Stages</h3>
                 <ul>
                     <li>
-                        <p><strong>Navigation Stage:</strong> The robot executes a hardcoded or grid-based path while monitoring for obstacles.</p>
+                        <p><strong>Navigation Stage:</strong> The robot executes a hardcoded or grid-based path while
+                            monitoring for obstacles.</p>
                     </li>
                     <li>
-                        <p><strong>Detection & Sort Stage:</strong> If the color sensor reads a "Green" value, the sorter arm opens; otherwise, it remains closed to discard the item.</p>
+                        <p><strong>Detection & Sort Stage:</strong> If the color sensor reads a "Green" value, the
+                            sorter arm opens; otherwise, it remains closed to discard the item.</p>
                     </li>
                     <li>
-                        <p><strong>Homing Stage:</strong> After 90 cm or a set distance, the robot spins until the IR detector finds the home base signal and initiates a return drive.</p>
+                        <p><strong>Homing Stage:</strong> After 90 cm or a set distance, the robot spins until the IR
+                            detector finds the home base signal and initiates a return drive.</p>
                     </li>
                     <li>
-                        <p><strong>Deposit Stage:</strong> Once the ultrasonic sensor detects a proximity of 2cm to the home bucket, the motors stop and the dump bucket servo rotates 180 degrees.</p>
+                        <p><strong>Deposit Stage:</strong> Once the ultrasonic sensor detects a proximity of 2cm to the
+                            home bucket, the motors stop and the dump bucket servo rotates 180 degrees.</p>
                     </li>
-                </ul>                
+                </ul>
             </section>
 
             <section class="image-gallery">
@@ -258,4 +267,5 @@
         });
     </script>
 </body>
+
 </html>
